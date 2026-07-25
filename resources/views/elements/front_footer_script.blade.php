@@ -1,0 +1,17 @@
+        <script src="{{ asset('frontend/js/vendor/modernizr-3.8.0.min.js') }}"></script>
+        <script src="{{ asset('frontend/js/vendor/jquery-1.12.4.min.js') }}"></script>
+        <script src="{{ asset('frontend/js/popper.min.js') }}"></script>
+        <script src="{{ asset('frontend/js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('frontend/js/owl.carousel.min.js') }}"></script>
+        <script src="{{ asset('frontend/js/waypoints.min.js') }}"></script>
+        <script src="{{ asset('frontend/js/jquery.counterup.min.js') }}"></script>
+        <script src="{{ asset('frontend/js/slick.min.js') }}"></script>
+        <script src="{{ asset('frontend/js/jquery.scrollUp.min.js') }}"></script>
+        <script src="{{ asset('frontend/js/jquery.meanmenu.min.js') }}"></script>
+        <script src="{{ asset('frontend/js/imagesloaded.pkgd.min.js') }}"></script>
+        <script src="{{ asset('frontend/js/jquery.magnific-popup.min.js') }}"></script>
+        <script src="{{ asset('frontend/js/plugins.js') }}"></script>
+        <script src="{{ asset('frontend/js/main.js') }}"></script>
+        <!-- Validation js -->
+        <script src="{{ asset('frontend/js/additional-methods.min.js') }}"></script>
+        <script src="{{ asset('frontend/js/jquery.validate.min.js') }}"></script>
