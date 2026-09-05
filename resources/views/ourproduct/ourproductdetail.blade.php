@@ -44,7 +44,9 @@
                         </div>
                         <div class="s-details-single mb-40">
                             <div class="s-details-thumb">
-                                <img src="{{ asset('storage/'.$ourproductdetail->image) }}" class="img-fluid" alt="{{ $ourproductdetail->alt_tag }}">
+                                @if($ourproductdetail->image && Storage::disk('public')->exists($ourproductdetail->image))
+                                    <img src="{{ asset('storage/'.$ourproductdetail->image) }}" class="img-fluid" alt="{{ $ourproductdetail->alt_tag }}">
+                                @endif
                             </div>
                             <div class="s-details-text">
                                 <h2>{{ $ourproductdetail->product_name }}</h2>
