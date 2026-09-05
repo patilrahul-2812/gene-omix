@@ -82,7 +82,7 @@
                 </div>
             </div>
         </section>
-        <section class="about-area pt-50 pb-10 text-center">
+        <section class="about-area pt-50 pb-60 text-center">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">

@@ -1090,6 +1090,17 @@ hr {
 .feature-single {
 	background-color: #fff;
 }
+.brand-products .row > [class*='col-'] {
+	display: flex;
+}
+.brand-products .feature-single {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+.brand-products .feature-text {
+	flex: 1;
+}
 .feature-single .feature-thumb {
 	overflow: hidden;
 }
