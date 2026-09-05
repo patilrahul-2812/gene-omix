@@ -50,7 +50,7 @@
         </section>
 
         @if(optional($branddetail->ourproduct)->isNotEmpty())
-            <section class="feature-area process-area gray-bg pt-50 pb-60">
+            <section class="feature-area process-area brand-products gray-bg pt-50 pb-60">
                 <div class="container">
                     <div class="section-title text-center">
                         <h2>Products</h2>
