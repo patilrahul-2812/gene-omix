@@ -82,7 +82,6 @@
                 </div>
             </div>
         </section>
-        
         <section class="about-area pt-50 pb-10 text-center">
             <div class="container">
                 <div class="row">
@@ -93,6 +92,32 @@
                 </div>
             </div>
         </section>
+        @php
+            $coreValues = json_decode($about->core_values, true) ?: [];
+        @endphp
+        @if(!empty($coreValues))
+            <section class="core-values-area gray-bg pt-30 pb-30">
+                <div class="core-values-heading">
+                    <div class="container">
+                        <h2>Core Values</h2>
+                    </div>
+                </div>
+                <div class="core-values-content">
+                    <div class="container">
+                        <div class="row">
+                            @foreach($coreValues as $coreValue)
+                                <div class="col-md-6">
+                                    <article class="core-value-card">
+                                        <h3>{{ $coreValue['title'] ?? '' }}</h3>
+                                        <p>{{ $coreValue['description'] ?? '' }}</p>
+                                    </article>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+            </section>
+        @endif
 
         @php
             $ourclient = json_decode($about->our_clients, true);

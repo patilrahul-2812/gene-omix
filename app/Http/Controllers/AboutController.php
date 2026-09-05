@@ -60,6 +60,12 @@ class AboutController extends Controller
      */
     public function update(Request $request, About $about)
     {
+        $request->validate([
+            'core_values' => ['nullable', 'array'],
+            'core_values.*.title' => ['nullable', 'string', 'max:255'],
+            'core_values.*.description' => ['nullable', 'string'],
+        ]);
+
         if(!empty($request->experience_img))
         {
             $get_experience_img = explode('storage/', $request->experience_img);
@@ -101,6 +107,16 @@ class AboutController extends Controller
             }
         }
         $request->merge(['our_clients' => json_encode($img_arr)]);
+
+        $core_values = collect($request->input('core_values', []))
+            ->filter(fn ($value) => !empty($value['title']) || !empty($value['description']))
+            ->map(fn ($value) => [
+                'title' => $value['title'] ?? '',
+                'description' => $value['description'] ?? '',
+            ])
+            ->values()
+            ->all();
+        $request->merge(['core_values' => json_encode($core_values)]);
         
         if($about->update($request->all()))
         {

@@ -166,6 +166,44 @@
                                                 </table>
                                             </div>
                                         </div>
+                                        <div class="row">
+                                            <div class="col-md-12 col-12 mt-2">
+                                                <strong><h4>Core Values</h4></strong>
+                                                <table id="core-values" class="table table-striped table-bordered">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Title</th>
+                                                            <th>Description</th>
+                                                            <th></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        @php
+                                                            $coreValues = json_decode($result->core_values, true) ?: [];
+                                                        @endphp
+                                                        @foreach($coreValues as $coreValueIndex => $coreValue)
+                                                            <tr id="core-value-{{ $coreValueIndex }}">
+                                                                <td>
+                                                                    <input type="text" name="core_values[{{ $coreValueIndex }}][title]" value="{{ $coreValue['title'] ?? '' }}" class="form-control">
+                                                                </td>
+                                                                <td>
+                                                                    <textarea name="core_values[{{ $coreValueIndex }}][description]" class="form-control" rows="3">{{ $coreValue['description'] ?? '' }}</textarea>
+                                                                </td>
+                                                                <td>
+                                                                    <button type="button" class="btn btn-danger" onclick="$('#core-value-{{ $coreValueIndex }}').remove()">X</button>
+                                                                </td>
+                                                            </tr>
+                                                        @endforeach
+                                                    </tbody>
+                                                    <tfoot>
+                                                        <tr>
+                                                            <td colspan="2"></td>
+                                                            <td><button type="button" class="btn btn-success" onclick="add_core_value()">+</button></td>
+                                                        </tr>
+                                                    </tfoot>
+                                                </table>
+                                            </div>
+                                        </div>
                                         <div class="row mt-1">
                                             <div class="col-12">
                                                 <button type="submit" class="btn btn-primary">Submit</button>
@@ -187,6 +225,19 @@
 
         <script>
             var edit_row_count = 0;
+            var core_value_row_count = {{ count(json_decode($result->core_values, true) ?: []) }};
+
+            function add_core_value()
+            {
+                var rowId = core_value_row_count++;
+                var coreValueHtml = `<tr id="core-value-${rowId}">
+                    <td><input type="text" name="core_values[${rowId}][title]" class="form-control"></td>
+                    <td><textarea name="core_values[${rowId}][description]" class="form-control" rows="3"></textarea></td>
+                    <td><button type="button" class="btn btn-danger" onclick="$('#core-value-${rowId}').remove()">X</button></td>
+                </tr>`;
+                $('#core-values tbody').append(coreValueHtml);
+            }
+
             function edit_multiimage(multiple_row_edit)
             {
                 if(multiple_row_edit == 2)

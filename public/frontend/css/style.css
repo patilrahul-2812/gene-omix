@@ -2286,6 +2286,70 @@ hr {
 	min-height: 525px;
 }
 /* 15. page title */
+.core-values-heading {
+	border-bottom: 3px solid transparent;
+	border-image: linear-gradient(90deg, #4f5b65 0%, #4f5b65 35%, #d27b2c 62%, #ff9700 100%) 1;
+	padding: 12px 0 8px;
+}
+.core-values-heading h2 {
+	color: #102c49;
+	font-size: 56px;
+	font-weight: 700;
+	letter-spacing: 1px;
+	line-height: 1.1;
+	margin: 0;
+	text-align: center;
+	text-transform: uppercase;
+}
+.core-values-content {
+	padding: 31px 0 28px;
+}
+.core-values-area .row {
+	margin-right: -7px;
+	margin-left: -7px;
+}
+.core-values-area [class*='col-'] {
+	padding-right: 7px;
+	padding-left: 7px;
+}
+.core-value-card {
+	border: 4px solid #102c49;
+	min-height: 174px;
+	margin-bottom: 13px;
+	padding: 10px 32px 17px;
+}
+.core-value-card h3 {
+	color: #102c49;
+	font-size: 19px;
+	font-weight: 700;
+	line-height: 1.2;
+	margin: 0 0 21px;
+	text-align: center;
+	text-transform: uppercase;
+}
+.core-value-card p {
+	color: #164270;
+	font-family: Georgia, 'Times New Roman', serif;
+	font-size: 16px;
+	line-height: 1.5;
+	margin: 0;
+}
+@media (max-width: 767px) {
+	.core-values-heading h2 {
+		font-size: 38px;
+	}
+	.core-values-content {
+		padding: 25px 0 12px;
+	}
+	.core-value-card {
+		min-height: 0;
+		padding: 18px 22px;
+		margin-bottom: 13px;
+	}
+	.core-value-card h3 {
+		margin-bottom: 13px;
+	}
+}
 .page-title-area {
 	background-position: center center;
 	background-size: cover;

@@ -18,5 +18,6 @@ class About extends Model
         'mission',
         'distribution_network_img',
         'our_clients',
+        'core_values',
     ];
 }
