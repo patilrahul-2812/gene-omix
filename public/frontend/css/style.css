@@ -1090,16 +1090,26 @@ hr {
 .feature-single {
 	background-color: #fff;
 }
-.brand-products .row > [class*='col-'] {
+.brand-products .row > [class*='col-'],
+.our-products-grid .row > [class*='col-'] {
 	display: flex;
 }
-.brand-products .feature-single {
+.brand-products .feature-single,
+.our-products-grid .feature-single {
 	display: flex;
 	flex-direction: column;
 	width: 100%;
 }
-.brand-products .feature-text {
+.brand-products .feature-text,
+.our-products-grid .feature-text {
 	flex: 1;
+}
+.our-products-grid .feature-thumb {
+	height: 260px;
+}
+.our-products-grid .feature-thumb img {
+	height: 100%;
+	object-fit: cover;
 }
 .feature-single .feature-thumb {
 	overflow: hidden;

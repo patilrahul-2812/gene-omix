@@ -23,7 +23,7 @@
             </div>
         </section>
 
-        <section class="feature-area process-area gray-bg pt-120 pb-90">
+        <section class="feature-area process-area our-products-grid gray-bg pt-50 pb-10">
             <div class="container">
                 <div class="row justify-content-center">
                     @foreach($ourproduct as $okey => $ovalue)
