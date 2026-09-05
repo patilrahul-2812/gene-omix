@@ -31,6 +31,9 @@ class InquiryMail extends Mailable
     {
         return new Envelope(
             subject: 'Inquiry Mail',
+            replyTo: [
+                new Address($this->data['email'], $this->data['full_name'] ?? ''),
+            ],
         );
     }
 
